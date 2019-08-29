@@ -1,0 +1,21 @@
+<form #f = "ngForm" (ngSubmit)="onLogin(f.value)" name="login-form" class="login-form" >
+
+  <div class="header">
+  <h1>Welcome to this Site</h1>
+  <span>Please, fill this form</span>
+  </div>
+
+  <div class="content">
+  <input name="username" ngModel  type="text" class="input username" placeholder="Username" />
+  <div class="user-icon"></div>
+  <input name="password" ngModel  type="password" class="input password" placeholder="Password" />
+  <div class="pass-icon"></div>
+  </div>
+
+  <div class="footer">
+    <button type="submit" class="button">Login</button>
+  <!-- <a href="/login" class="button">Login</a> -->
+  </div>
+
+</form>
+
