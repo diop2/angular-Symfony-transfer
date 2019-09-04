@@ -5,9 +5,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CatalogueService {
-  public host = 'http://localhost:8000/api/listUser';
-
   constructor(private http: HttpClient) { }
+
+  public host = 'http://localhost:8000/api/listUser';
+  public ajoutEm = 'http://localhost:8000/api/employer';
+  public ajoutPartenaire = 'http://localhost:8000/api/partenaire';
   getAllUser() {
    // return this.http.get(this.host + '/user');
    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
@@ -17,4 +19,19 @@ export class CatalogueService {
   getRessource(url) {
     return this.http.get(url);
   }
+
+  adduser(ajoutEm, data) {
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    // tslint:disable-next-line: object-literal-shorthand
+    console.log(data);
+    return this.http.post(ajoutEm, data, { headers: headers});
+  }
+  addPartenaire(addPartenaire, data) {
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    // tslint:disable-next-line: object-literal-shorthand
+    console.log(data);
+    return this.http.post<any>(this.ajoutPartenaire, data, { headers: headers});
+  }
+
+
 }

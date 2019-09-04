@@ -1,1 +1,150 @@
-<p>jkjkj</p>
+<div class="row btposition">
+  <div>
+    <button type="button" class="btn btn-primary mb-2 touche" (click)="onAjout()">Ajout Employer</button>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-primary mb-2 touche" (click)="onAjoutPartenaire()">Ajout Partenaire</button>
+  </div>
+</div>
+<!-- Ajout Employer -->
+
+
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins" *ngIf="ajout=='addUser'">
+  <div class="wrapper wrapper--w780">
+    <div class="card card-3">
+      <div class="card-heading"></div>
+      <div class="card-body">
+        <h2 class="title"> ajout employer</h2>
+        <form #f="ngForm" (ngSubmit)="onSaveUser(f.value)">
+          <div class="input-group">
+            <input class="input--style-3" type="text" placeholder="NomComplet" name="NomComplet" ngModel>
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="email" placeholder="email" name="email" ngModel>
+
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="password" placeholder="mot de passe" name="password"
+              ngModel>
+          </div>
+
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="text" placeholder="Numéro Carte D'identité" name="NCI"
+              ngModel>
+          </div>
+
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="text" placeholder="Numéro téléphone" name="Tel" ngModel>
+          </div>
+
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="text" placeholder="Adresse" name="Adresse" ngModel>
+          </div>
+
+
+
+          <div class="input-group">
+            <div class="rs-select2 js-select-simple select--no-search">
+              <select name="roles" ngModel placeholder="roles">
+                <option *ngFor="let  roles of roles" selected="selected" [value]="roles">{{roles}}</option>
+                <!-- <option>{{roles}}</option> -->
+                <!-- <option>CAISSIER</option> -->
+
+              </select>
+              <div class="select-dropdown"></div>
+            </div>
+          </div>
+
+          <div class="p-t-10">
+            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ajout Partenaire -->
+
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins" *ngIf="ajout=='addPartenaire'">
+  <div class="wrapper wrapper--w780">
+    <div class="card card-3">
+      <div class="card-heading"></div>
+      <div class="card-body">
+        <h2 class="title"> ajout partenaire</h2>
+        <form #f="ngForm" (ngSubmit)="onSavePartenaire(f.value)">
+          <div class="input-group">
+            <input class="input--style-3" type="text" placeholder="NomComplet" name="NomComplet" ngModel>
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="email" placeholder="email" name="email" ngModel>
+
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="password" placeholder="mot de passe" name="password"
+              ngModel>
+          </div>
+
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="text" placeholder="Numéro Carte D'identité" name="NCI"
+              ngModel>
+          </div>
+
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="text" placeholder="Numéro téléphone" name="Tel" ngModel>
+          </div>
+
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="text" placeholder="Adresse" name="Adresse" ngModel>
+          </div>
+
+          <div class="input-group">
+              <input class="input--style-3 js-datepicker" type="text" placeholder="NomEntreprise" name="NomEntreprise" ngModel>
+          </div>
+
+            <div class="input-group">
+                <input class="input--style-3 js-datepicker" type="text" placeholder="Linea" name="Linea" ngModel>
+            </div>
+
+            <div class="input-group">
+                <input class="input--style-3 js-datepicker" type="text" placeholder="RaisonSociale" name="RaisonSociale" ngModel>
+            </div>
+
+
+
+          <div class="p-t-10">
+            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<table class="table table-striped table-dark" *ngIf="user">
+  <thead>
+    <tr>
+      <th>Nomcomplet</th>
+      <th>Email</th>
+      <th>Roles</th>
+      <th>NCI</th>
+      <th>Tel</th>
+      <th>Adresse</th>
+      <th>isActive</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of user">
+      <td>{{c.NomComplet}}</td>
+      <td>{{c.email}}</td>
+      <td>{{c.roles}}</td>
+      <td>{{c.NCI}}</td>
+      <td>{{c.Tel}}</td>
+      <td>{{c.Adresse}}</td>
+    </tr>
+
+  </tbody>
+
+</table>

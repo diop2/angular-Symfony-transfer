@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-
 
   constructor(private http: HttpClient) { }
 host2 = 'http://127.0.0.1:8000/api/login_check';
@@ -31,17 +29,17 @@ roles: Array<string>;
  this.roles = objJWT.roles;
   }
 
-  isUser() {
-    return this.roles.indexOf('ROLE_ADMIN_PARTENAIRE') >= 0;
+  isADMIN_PARTENAIRE() {
+    return this.roles.indexOf('ADMIN_PARTENAIRE') >= 0;
     // throw new Error('Method not implemented.');
   }
-  isAdmin() {
+  isADMIN_SYSTEME() {
     return this.roles.indexOf('ADMIN_SYSTEME') >= 0;
     // throw new Error('Method not implemented.');
   }
 
   isAuthenticated() {
-    return this.roles && (this.isAdmin() || this.isUser());
+    return this.roles && (this.isADMIN_SYSTEME() || this.isADMIN_PARTENAIRE());
   }
   loadToken() {
     this.jwt = localStorage.getItem('token');

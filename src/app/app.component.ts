@@ -15,11 +15,11 @@ ngOnInit(): void {
   this.authService.loadToken();
  // throw new Error("Method not implemented.");
 }
-isAdmin()   {
-  return this.authService.isAdmin();
+isADMIN_SYSTEME()   {
+  return this.authService.isADMIN_SYSTEME();
 }
-isUser()   {
-  return this.authService.isUser();
+isADMIN_PARTENAIRE()   {
+  return this.authService.isADMIN_PARTENAIRE();
 }
 
 isAuthenticated() {

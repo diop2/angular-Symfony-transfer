@@ -1,10 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <div id ="ous" >
-  <p>
-<a routerLink="/login" class= 'debut'>Se Connecté</a>
-</p>
-</div> -->
-
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ndar Transfert</font></font></a>
@@ -14,23 +7,27 @@
 
   <div class="collapse navbar-collapse" id="navbarColor03">
     <ul class="navbar-nav mr-auto">
+
       <li class="nav-item active">
         <a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Accueil </font></font><span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(actuel)</font></font></span></a>
       </li>
-      <li class="nav-item" *ngIf= "isAuthenticated()">
+      <div *ngIf="isAuthenticated()" class="collapse navbar-collapse" id="navbarColor03">
+      <li *ngIf="isADMIN_SYSTEME()" class="nav-item">
         <a class="nav-link" routerLink="/listePartenaire" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">lister</font></font></a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="isADMIN_PARTENAIRE()" class="nav-item">
         <a class="nav-link" routerLink= "/ajout" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ajout</font></font></a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="isAuthenticated()" class="nav-item">
         <a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Depot</font></font></a>
       </li>
+
+      </div>
     </ul>
     <div class="form-inline my-2 my-lg-0" >
 
-      <a *ngIf="!isAuthenticated()" class="nav-link" routerLink="/login"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">se connecté</font></font></a>
-      <a *ngIf="isAuthenticated()" class="nav-link" (click)="logOut()"  href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">se déconnecté</font></font></a>
+      <a *ngIf="!isAuthenticated()" class="nav-link" routerLink="/login"><font style="vertical-align: inherit;" mat-raised-button><font style="vertical-align: inherit;">se connecté</font></font></a>
+      <a *ngIf="isAuthenticated()" class="nav-link" (click)="logOut()"  href="#" mat-raised-button><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">se déconnecté</font></font></a>
 
 
     </div>
