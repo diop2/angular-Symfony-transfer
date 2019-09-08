@@ -71,9 +71,7 @@ import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
-
     LayoutModule,
-
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,
@@ -160,9 +158,8 @@ import { MatTableModule } from '@angular/material/table';
 
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
-
+    MatTableModule,
   ]
 
 })
-export class AngularMaterialModule { }
+export class AngularMaterialModule {}

@@ -12,6 +12,9 @@ import { AjoutComponent } from './ajout/ajout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { AngularMaterialModule } from './material/material.module';
+import { DepotComponent } from './depot/depot.component';
+import { TraitementComponent } from './traitement/traitement.component';
+
 
 
 
@@ -22,7 +25,9 @@ import { AngularMaterialModule } from './material/material.module';
       AdminSystemComponent,
       ListePartenaireComponent,
       AjoutComponent,
-      UserComponent
+      UserComponent,
+      DepotComponent,
+      TraitementComponent
    ],
    imports: [
     AngularMaterialModule,
@@ -30,7 +35,9 @@ import { AngularMaterialModule } from './material/material.module';
       AppRoutingModule,
       FormsModule,
       HttpClientModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      AngularMaterialModule
+
    ],
    providers: [],
    bootstrap: [

@@ -38,8 +38,13 @@ roles: Array<string>;
     // throw new Error('Method not implemented.');
   }
 
+  isCAISSIER() {
+    return this.roles.indexOf('CAISSIER') >= 0;
+    // throw new Error('Method not implemented.');
+  }
+
   isAuthenticated() {
-    return this.roles && (this.isADMIN_SYSTEME() || this.isADMIN_PARTENAIRE());
+    return this.roles && (this.isADMIN_SYSTEME() || this.isADMIN_PARTENAIRE() || this.isCAISSIER);
   }
   loadToken() {
     this.jwt = localStorage.getItem('token');

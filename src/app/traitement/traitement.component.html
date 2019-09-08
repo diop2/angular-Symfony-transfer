@@ -1,0 +1,73 @@
+<div class="row btposition">
+  <div>
+    <button type="button" class="btn btn-primary mb-2 touche" (click)="onEffectuerEnvoie()">envoie</button>
+  </div>
+  <div>
+
+    <!-- ENVOIE -->
+
+    <button type="button" class="btn btn-primary mb-2 touche" (click)="onEffectuerRetrait()">retrait</button>
+  </div>
+</div>
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins" *ngIf="envoie=='addenvoie'">
+  <div class="wrapper wrapper--w780">
+    <div class="card card-3">
+      <div class="card-heading"></div>
+      <div class="card-body">
+        <h2 class="title"> ajout employer</h2>
+        <form #f="ngForm" (ngSubmit)="onEnvoie(f.value)">
+          <div class="input-group">
+            <input class="input--style-3" type="text" placeholder="Nom Completde l'expéditeur" name="NonEnvoie" ngModel>
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="number"
+              placeholder="Numéro carte d'identité de l'expéditeur" name="NCIEnvoyer" ngModel>
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="number" placeholder="Téléphone de l'expéditeur"
+              name="TelEnvoyer" ngModel>
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="number" placeholder="Téléphone destinataire"
+              name="TelRecus" ngModel>
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="text" placeholder="Nom Complet destinataire"
+              name="NomRecus" ngModel>
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="number" placeholder="Montant" name="Montant" ngModel>
+          </div>
+
+
+          <div class="p-t-10">
+            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- RETRAIT -->
+
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins" *ngIf="retrait=='addretrait'">
+  <div class="wrapper wrapper--w780">
+    <div class="card card-3">
+      <div class="card-heading"></div>
+      <div class="card-body">
+        <h2 class="title"> ajout employer</h2>
+        <form #f="ngForm" (ngSubmit)="onRetrait(f.value)">
+          <div class="input-group">
+            <input class="input--style-3" type="text" placeholder="Code retrait" name="Code" ngModel>
+          </div>
+          <div class="p-t-10">
+            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,7 +21,9 @@ isADMIN_SYSTEME()   {
 isADMIN_PARTENAIRE()   {
   return this.authService.isADMIN_PARTENAIRE();
 }
-
+isCAISSIER() {
+  return this.authService.isCAISSIER();
+}
 isAuthenticated() {
   return this.authService.isAuthenticated();
 }

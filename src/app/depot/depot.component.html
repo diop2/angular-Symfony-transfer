@@ -1,0 +1,30 @@
+
+<div>
+    <button type="button" class="btn btn-primary mb-2 touche" (click)="onDepot()">Depot</button>
+  </div>
+
+
+  <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins"  *ngIf= "depots=='addDepot'" >
+  <div class="wrapper wrapper--w780">
+    <div class="card card-3">
+      <div class="card-heading"></div>
+      <div class="card-body">
+        <h2 class="title"> ajout employer</h2>
+        <form #f = "ngForm" (ngSubmit)= "onAjoutDepot(f.value)">
+          <div class="input-group">
+            <input class="input--style-3" type="text" placeholder="numeroCompte" name="numeroCompte" ngModel>
+          </div>
+          <div class="input-group">
+            <input class="input--style-3 js-datepicker" type="text" placeholder="Depot" name="Depot" ngModel>
+
+          </div>
+
+
+          <div class="p-t-10">
+            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>

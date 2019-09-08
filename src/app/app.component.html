@@ -18,15 +18,19 @@
       <li *ngIf="isADMIN_PARTENAIRE()" class="nav-item">
         <a class="nav-link" routerLink= "/ajout" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ajout</font></font></a>
       </li>
-      <li *ngIf="isAuthenticated()" class="nav-item">
-        <a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Depot</font></font></a>
+      <li *ngIf="isCAISSIER()" class="nav-item">
+        <a class="nav-link" routerLink= "/depot"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Depot</font></font></a>
+      </li>
+
+      <li *ngIf="isADMIN_PARTENAIRE()" class="nav-item">
+        <a class="nav-link" routerLink= "/traitement"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Transaction</font></font></a>
       </li>
 
       </div>
     </ul>
     <div class="form-inline my-2 my-lg-0" >
 
-      <a *ngIf="!isAuthenticated()" class="nav-link" routerLink="/login"><font style="vertical-align: inherit;" mat-raised-button><font style="vertical-align: inherit;">se connecté</font></font></a>
+      <a *ngIf="!isAuthenticated()" class="nav-link" routerLink="/login" mat-raised-button><font style="vertical-align: inherit;" ><font style="vertical-align: inherit;">se connecté</font></font></a>
       <a *ngIf="isAuthenticated()" class="nav-link" (click)="logOut()"  href="#" mat-raised-button><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">se déconnecté</font></font></a>
 
 
